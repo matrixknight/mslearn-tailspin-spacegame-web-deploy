@@ -62,7 +62,7 @@ stages:
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
 
-- stage: 'Deploy'
+stage: 'Deploy'
   displayName: 'Deploy the web application'
   dependsOn: Build
   jobs:
@@ -81,6 +81,6 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure App Service Deploy: website'
             inputs:
-              azureSubscription: 'Resource Manager - Knightsoft - Space Game'
-              appName: 'knightsoft-space-game-web'
-              package: 'matrixknight.mslearn-tailspin-spacegame-web-deploy/drop/$(buildConfiguration)/*.zip'
+              azureSubscription: 'Resource Manager - Tailspin - Space Game'
+              appName: '$(WebAppName)'
+              package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'

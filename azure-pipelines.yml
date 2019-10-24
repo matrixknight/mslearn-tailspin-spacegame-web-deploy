@@ -83,4 +83,4 @@ stages:
             inputs:
               azureSubscription: 'Resource Manager - Knightsoft - Space Game'
               appName: 'knightsoft-space-game-web'
-              package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
+              package: 'matrixknight.mslearn-tailspin-spacegame-web-deploy/drop/$(buildConfiguration)/*.zip'
